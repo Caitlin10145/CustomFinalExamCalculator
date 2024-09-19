@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Custom Final Exam Calculator</title>
+  <div class="header">
+    <h1>Custom Final Exam Calculator</h1>
+  </div>
+  <br><div class="extra-info">Input your data then hit submit. You will be told what you need to get on your<br>final and will order each subject by how much you need to get on the final.</div>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+  <br><br>
+  
+  <div class="whole-grid">
+  <div class="grid-container">
+    <div class="grid-item">Class name</div>
+    <div class="grid-item">Your current grade</div>
+    <div class="grid-item">The weight of the final</div>
+    <div class="grid-item">The grade you want</div>
+
+    <div class="grid-item"><input type="text" id="hisName" style="width: 189px;"></div>
+    <div class="grid-item"><input type="number" id="his" name="his" style="width: 189px;"></div>
+    <div class="grid-item"><input type="number" id="his1" name="his1" size="100"></div>
+    <div class="grid-item"><input type="number" id="his2" name="his2" style="width: 189px;"></div>
+    <div class="grid-item"><input type="text" id="langName" style="width: 189px;"></div>
+    <div class="grid-item"><input type="number" id="lang" name="lang" style="width: 189px;"></div>
+    <div class="grid-item"><input type="number" id="lang1" name="lang1"></div>
+    <div class="grid-item"><input type="number" id="lang2" name="lang2" style="width: 189px;"></div>
+    <div class="grid-item"><input type="text" id="elecName" style="width: 189px;"></div>
+    <div class="grid-item"><input type="number" id="elec" name="elec" style="width: 189px;"></div>
+    <div class="grid-item"><input type="number" id="elec1" name="elec1"></div>
+    <div class="grid-item"><input type="number" id="elec2" name="elec2" style="width: 189px;"></div>
+    <div class="grid-item"><input type="text" id="mathName" style="width: 189px;"></div>
+    <div class="grid-item"><input type="number" id="math" name="math" style="width: 189px;"></div>
+    <div class="grid-item"><input type="number" id="math1" name="math1"></div>
+    <div class="grid-item"><input type="number" id="math2" name="math2" style="width: 189px;"></div>
+    <div class="grid-item"><input type="text" id="sciName" style="width: 189px;"></div>
+    <div class="grid-item"><input type="number" id="sci" name="sci" style="width: 189px;"></div>
+    <div class="grid-item"><input type="number" id="sci1" name="sci1"></div>
+    <div class="grid-item"><input type="number" id="sci2" name="sci2" style="width: 189px;"></div>
+    <div class="grid-item"><input type="text" id="laName" style="width: 189px;"></div>
+    <div class="grid-item"><input type="number" id="la" name="la" style="width: 189px;"></div>
+    <div class="grid-item"><input type="number" id="la1" name="la1"></div>
+    <div class="grid-item"><input type="number" id="la2" name="la2" style="width: 189px;"></div>
+  </div>
+  <div class="the-void"></div>
+  <div class = "gid">
+    <div class="gid-item">Class</div>
+    <div class="gid-item">Grade you need</div>
+    <div class="gid-item11" id = "item11"> </div>
+    <div class="gid-item12" id = "item12"> </div>
+    <div class="gid-item21" id = "item21"> </div>
+    <div class="gid-item22" id = "item22"> </div>
+    <div class="gid-item31" id = "item31"> </div>
+    <div class="gid-item32" id = "item32"> </div>
+    <div class="gid-item41" id = "item41"> </div>
+    <div class="gid-item42" id = "item42"> </div>
+    <div class="gid-item51" id = "item51"> </div>
+    <div class="gid-item52" id = "item52"> </div>
+    <div class="gid-item61" id = "item61"> </div>
+    <div class="gid-item62" id = "item62"> </div>
+  </div>
+  </div>
+  <br>
+  
+  <button class="my-button" onclick="myFunction()" >Submit</button>
+
+
+  
+  <script>
+
+    
+      function myFunction() {
+        var laName = document.getElementById("laName").value;
+        var sciName = document.getElementById("sciName").value;
+        var langName = document.getElementById("langName").value;
+        var elecName = document.getElementById("elecName").value;
+        var mathName = document.getElementById("mathName").value;
+        var hisName = document.getElementById("hisName").value;
+        var his = document.getElementById("his").value;
+        var his1 = document.getElementById("his1").value;
+        var his2 = document.getElementById("his2").value;
+        var lang = document.getElementById("lang").value;
+        var lang1 = document.getElementById("lang1").value;
+        var lang2 = document.getElementById("lang2").value;
+        var elec = document.getElementById("elec").value;
+        var elec1 = document.getElementById("elec1").value;
+        var elec2 = document.getElementById("elec2").value;
+        var math = document.getElementById("math").value;
+        var math1 = document.getElementById("math1").value;
+        var math2 = document.getElementById("math2").value;
+        var sci = document.getElementById("sci").value;
+        var sci1 = document.getElementById("sci1").value;
+        var sci2 = document.getElementById("sci2").value;
+        var la = document.getElementById("la").value;
+        var la1 = document.getElementById("la1").value;
+        var la2 = document.getElementById("la2").value;
+        findGrades(hisName,his,his1, his2,langName,lang,lang1,lang2,elecName,elec,elec1,elec2,mathName,math,math1,math2,sciName,sci,sci1,sci2,laName,la,la1,la2);
+        document.getElementById("item11").innerHTML = ClassOrderType[0];
+        document.getElementById("item12").innerHTML = GradeOrderType[0];
+        document.getElementById("item21").innerHTML = ClassOrderType[1];
+        document.getElementById("item22").innerHTML = GradeOrderType[1];
+        document.getElementById("item31").innerHTML = ClassOrderType[2];
+        document.getElementById("item32").innerHTML = GradeOrderType[2];
+        document.getElementById("item41").innerHTML = ClassOrderType[3];
+        document.getElementById("item42").innerHTML = GradeOrderType[3];
+        document.getElementById("item51").innerHTML = ClassOrderType[4];
+        document.getElementById("item52").innerHTML = GradeOrderType[4];
+        document.getElementById("item61").innerHTML = ClassOrderType[5];
+        document.getElementById("item62").innerHTML = GradeOrderType[5];
+      }
+  </script>
+  
+<body>
+  <script src="script.js"></script>
+  <br>
+</body>
+<footer class="my-footer">
+
+</html>
